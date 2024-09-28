@@ -9,8 +9,6 @@
   <link rel="icon" sizes="32x32" href="/public/favicon.ico" type="image/png">
   <link rel="icon" sizes="48x48" href="/public/favicon-48x48.png" type="image/png">
 
-  <!-- js -->
-  <script src="/src/script.js"></script>
   <!-- css -->
   <link rel="stylesheet"  href="/src/common.css">
   <link rel="stylesheet"  href="/src/styles.css">
@@ -19,6 +17,16 @@
 
 </head>
 <body>
-  <img id="randomImage" alt="Random Image" width="500">
+  <div class="constanier">
+    <picture>
+      <figure>
+        <source type="image/webp" srcset="image.webp">
+        <img id="randomImage" alt="Random Image">
+      </figure>
+    </picture>
+  </div>
+
+  <!-- js -->
+  <script src="/src/script.js"></script>
 </body>
 </html>
