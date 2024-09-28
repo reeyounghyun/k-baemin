@@ -39,6 +39,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
+    position: relative;
     overflow: hidden;
     width: 100%;
     margin: 0px;
