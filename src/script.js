@@ -20,19 +20,28 @@
 
 const imagesBg = document.getElementById('randomImage');
 
-function getRandomImage() {
-  const randomIndex = Math.floor(Math.random() * 2);
+function getRandomImage(callback) {
+  const bgClasses = ['bg1', 'bg2', 'bg3', 'bg4'];
+  const randomIndex = Math.floor(Math.random() * bgClasses.length);
   
   // 기존 클래스 제거
-  imagesBg.classList.remove('bg1', 'bg2');
+  imagesBg.classList.remove(...bgClasses);
   
-  // 새 클래스 추가
-  if (randomIndex === 0) {
-    imagesBg.classList.add('bg1');
-  } else {
-    imagesBg.classList.add('bg2');
+  // 랜덤으로 선택된 클래스 추가
+  const newClass = bgClasses[randomIndex];
+  imagesBg.classList.add(newClass);
+  
+  // 콜백 함수가 있으면 호출
+  if (callback) {
+    callback(newClass);
   }
 }
+
+// 예시: 이미지가 로드된 후 애니메이션 추가
+getRandomImage(function() {
+  imagesBg.style.animation = 'growShrink 2s ease-out';
+});
+
 
 // 새로고침 시 랜덤 이미지 설정
 window.onload = function() {
